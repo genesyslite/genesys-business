@@ -1,0 +1,38 @@
+{
+    "name": "genesyslite/genesys-business",
+    "description": "",
+    "type": "library",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "homepage": "https://github.com/genesyslite/genesys-business",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mc Giver Avila Portocarrero",
+            "email": "xmcgiver12@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : "^7.3|^8.0",
+        "genesyslite/genesys-ubigee": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "GenesysLite\\GenesysBusiness\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GenesysLite\\GenesysBusiness\\Providers\\GenesysBusinessServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
