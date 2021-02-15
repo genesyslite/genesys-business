@@ -42,57 +42,6 @@ class CreateConfigurationsTable extends Migration
                 'value' => '6',
                 'type' => 'Business'
             ],
-
-            [
-                'field' => 'soap_send_id',
-                'value' => '01',
-                'type' => 'SUNAT'
-            ],
-            [
-                'field' => 'soap_type_id',
-                'value' => '01',
-                'type' => 'SUNAT'
-            ],
-            [
-                'field' => 'soap_username',
-                'value' => '',
-                'type' => 'SUNAT'
-            ],
-            [
-                'field' => 'soap_password',
-                'value' => '',
-                'type' => 'SUNAT'
-            ],
-            [
-                'field' => 'soap_url',
-                'value' => '',
-                'type' => 'SUNAT'
-            ],
-            [
-                'field' => 'certificate',
-                'value' => '',
-                'type' => 'SUNAT'
-            ],
-            [
-                'field' => 'certificate_due',
-                'value' => '',
-                'type' => 'SUNAT'
-            ],
-            [
-                'field' => 'logo',
-                'value' => '',
-                'type' => 'SUNAT'
-            ],
-            [
-                'field' => 'logo_store',
-                'value' => '',
-                'type' => 'SUNAT'
-            ],
-            [
-                'field' => 'operation_amazonia',
-                'value' => false,
-                'type' => 'SUNAT'
-            ]
         ]);
     }
 
