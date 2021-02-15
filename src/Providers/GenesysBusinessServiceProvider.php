@@ -17,6 +17,10 @@ class GenesysBusinessServiceProvider extends ServiceProvider
             __DIR__ . '/../../config/genesysBusiness.php',
             'genesysBusiness'
         );
+
+        $this->publishes([
+            __DIR__.'/../../graphql' => base_path('/graphql/GenesysBusiness'),
+        ], 'genesys-business-schema');
     }
 
     /**
