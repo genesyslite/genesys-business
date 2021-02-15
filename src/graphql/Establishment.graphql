@@ -1,0 +1,57 @@
+type Establishment {
+    id: ID!
+    description: String!
+    country_id: String!
+    country: Country! @belongsTo
+    department_id: String!
+    department: Department! @belongsTo
+    province_id: String!
+    province: Province! @belongsTo
+    district_id: String!
+    district: District! @belongsTo
+    address: String!
+    email: String!
+    telephone: String!
+    code: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+type EstablishmentModel {
+    id: ID!
+    country_id: String!
+    country: Country!
+    department_id: String!
+    department: Department!
+    province_id: String!
+    province: Province!
+    district_id: String!
+    district: District!
+    address: String!
+    email: String!
+    telephone: String!
+    code: String!
+}
+input EstablishmentInput {
+    id: ID
+    description: String!
+    country_id: String!
+    department_id: String!
+    province_id: String!
+    district_id: String!
+    address: String!
+    email: String!
+    telephone: String!
+    code: String!
+}
+extend type Query {
+    EstablishmentsAll(orderBy: _ @orderBy(columns: ["telephone","email","description","created_at"])): [Establishment!]! @all
+    Establishments(company_id: String @where(operator: "="),
+        where: _ @whereConditions(columns: ["description"]),
+        orderBy: _ @orderBy(columns: ["telephone","email","description","created_at"])): [Establishment!]! @paginate
+    Establishment(id: String @eq): Establishment @find
+    EstablishmentCompany(company_id: String @where(operator: "=")): [Establishment!]! @all
+}
+extend type Mutation {
+    upsertEstablishment(input: EstablishmentInput! @spread): Establishment @upsert
+}
